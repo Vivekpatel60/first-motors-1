@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+    crossorigin="anonymous"></script>
+    <script src="first-motors.js"></script>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        }
+
+        .i{
+            height: 50%;
+            width: 100%;
+            position: relative;
+            z-index: -1;
+        }
+
+        .navbar{
+            justify-content: center;
+        }
+
+        .nav-link1 {
+            color: black;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        .nav-link1:hover {
+            color: rgb(202, 50, 50);
+            font-weight: 600;
+        }
+
+        .navbar .btn {
+            margin-left: 10px;
+        }
+
+        .carousel-control-prev-icon,.carousel-control-next-icon {
+            border-radius: 50%;
+            padding: 20px;
+        }
+
+        .carousel-control-prev {
+            margin-left: -5%; 
+        }
+
+        .carousel-control-next {
+            left: 90%; 
+        }
+
+        .arrow1{
+            display: flex;
+            color: black;
+            font-size: 30px;
+            background: none;
+            align-items: center;
+            justify-content: center;  
+        }
+
+        .arrow1::before{
+            content: "<";
+        }
+
+        .arrow2{
+            display: flex;
+            color: black; 
+            font-size: 30px;
+            background: none;
+            align-items: center;
+            justify-content: center;  
+        }
+
+        .arrow2::before{
+            content: ">";
+        }
+
+        .nav-pills .nav-link2{
+          color: darkgray;
+          padding: 0.6rem 1.5rem;
+          border-radius: 50px;
+        }
+
+        .nav-pills .nav-link2:hover{
+          color: black;
+          background-color: #EFEFEF;
+          padding: 0.6rem 1.5rem;
+          border-radius: 50px;
+        }
+
+        .nav-pills .nav-link2.active{
+          color: white;
+          border-radius: 50px;
+          padding: 0.6rem 1.5rem;
+          background-color: black;
+        }
+
+        .card {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+          font-weight: bold;
+        }
+       
+        .v1{
+          color: darkgray;
+          border-radius: 0;
+          border: 1px solid rgba(0, 0, 0, 0.231);
+          transition: 0.3s;
+          padding: 0.9%;
+        }
+
+        .v1:hover{
+          color: black;
+          background-color: #EFEFEF;
+          border: 1px solid rgba(0, 0, 0, 0.231);
+          transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding: 1%;">
+        <img src="https://f1rstmotors.com/_next/static/media/logo-dark.d8054a81.svg" style="height: 20%; width: 20%; margin-left: 38%;"/>
+    </div>
+     <div class="container-fluid h-100 w-100" style="z-index: 1; border-bottom: 1px solid;" >
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">    
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            style="margin-left: 93%;">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">SALES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">NEWS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">SHOP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">MEDIA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">CONTACT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link1" href="#">SELL MY CAR</a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+    </nav>
+   </div> 
+    <div class="carousel slide mt-5" id="demo" data-bs-ride="carousel">
+        <!-- <div class="carousel-indicators">
+           <button data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+           <button data-bs-target="#demo" data-bs-slide-to="1"></button>
+           <button data-bs-target="#demo" data-bs-slide-to="2"></button>
+           <button data-bs-target="#demo" data-bs-slide-to="3"></button>
+           <button data-bs-target="#demo" data-bs-slide-to="4"></button>
+           <button data-bs-target="#demo" data-bs-slide-to="5"></button>
+          </div> -->
+          <div class="carousel-inner">
+           
+            <div class="carousel-item active">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fheroslider%2F1727707598755-blob&w=1920&q=100" class="i"/>
+            </div>
+            <div class="carousel-item ">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fheroslider%2F1727707644325-blob&w=1920&q=100" class="i"/>
+            </div>
+            <div class="carousel-item ">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fheroslider%2F1727707662964-blob&w=1920&q=100" class="i"/>
+            </div>
+            <div class="carousel-item">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fheroslider%2F1727707726535-blob&w=1920&q=100" class="i"/>
+            </div>
+            <div class="carousel-item ">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fheroslider%2F1727707768316-blob&w=1920&q=100" class="i"/>
+            </div>
+            <div class="carousel-item ">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fheroslider%2F1732287468080-blob&w=1920&q=100" class="i"/>
+            </div>
+            <button class="carousel-control-prev" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-white arrow1"></span>
+            </button>
+            <button class="carousel-control-next" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-white arrow2" ></span>
+            </button>   
+        </div>
+    </div>  
+
+    <div class="container-fluid">
+      <h2 class="mt-5 mb-5" style="font-family:'Franklin Gothic Medium';">Featured Stock</h2>
+      <ul class="nav nav-pills justify-content-start mb-4">
+        <li class="nav-item">
+          <a class="nav-link nav-link2 active" data-bs-toggle="pill" href="#all">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link2" data-bs-toggle="pill" href="#ferrari">Ferrari</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link2" data-bs-toggle="pill" href="#lamborghini">Lamborghini</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link2" data-bs-toggle="pill" href="#mercedes-benz">Mercedes-Benz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link2" data-bs-toggle="pill" href="#porsche">Porsche</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link2" data-bs-toggle="pill" href="#rolls-royce">Rolls-Royce</a>
+        </li>
+      </ul>
+      <a class=" btn v1" href="#demo1" style="margin: -8.3% 0 0 90%;">View all &raquo;</a>
+      <div class="tab-content">
+        <!-- all Tab -->
+        <div class="tab-pane fade show active" id="all">
+          <div class="row mt-1">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1737459875939-blob&w=1920&q=75" class="card-img-top" style="height: 200px;">
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Rolls-Royce Cullinan Black Badge</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: 70%;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1736951742309-blob&w=1920&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Mercedes Maybach G650 Landaulet</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,529,999</button> 
+                    <p style="margin: -6% 0 0 82%;">
+                      <span class="bg-light text-dark" style="font-size: 70%;" >2018 | 2,318km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1736781251962-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Porsche 911 GT3 RS Weissach</h5>
+                  <p class="card-text"> Coupe</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 1,449,999</button> 
+                    <p style="margin: -6% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: 70%;" >2024 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1735398350789-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: 70%;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1734013257213-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: 70%;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1732973646506-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: 70%;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Ferrari pane -->
+        <div class="tab-pane fade show" id="ferrari">
+          <div class="row mt-1">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1735398350789-blob&w=640&q=75" class="card-img-top" style="height: 200px;">
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1734013257213-blob&w=1920&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1732973646506-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1726326243137-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1727088797880-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1730213305056-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Lamborghini pane -->
+        <div class="tab-pane fade show" id="lamborghini">
+          <div class="row mt-1">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1713862532446-blob&w=640&q=75" class="card-img-top" style="height: 200px;">
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1737119361971-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1733418931748-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1731770234630-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1737041830540-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Mercedes-Benz pane -->
+        <div class="tab-pane fade show" id="mercedes-benz">
+          <div class="row mt-1">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1736951742309-blob&w=1920&q=75" class="card-img-top" style="height: 200px;">
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Porsche pane -->
+        <div class="tab-pane fade show" id="porsche">
+          <div class="row mt-1">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1736781251962-blob&w=640&q=75" class="card-img-top" style="height: 200px;">
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Rolls-Royce pane -->
+        <div class="tab-pane fade show" id="rolls-royce">
+          <div class="row mt-1">
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1737459875939-blob&w=1920&q=75" class="card-img-top" style="height: 200px;">
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <img src="https://f1rstmotors.com/_next/image?url=https%3A%2F%2Ff1rst-motors.s3.me-central-1.amazonaws.com%2Fcars%2F1726247381330-blob&w=640&q=75" class="card-img-top" style="height: 200px;"/>
+                <div class="card-body" style="background-color: #EFEFEF; border-top: 1px solid;">
+                  <h5 class="card-title">Parkview 2</h5>
+                  <p class="card-text"> SUV</p>
+                  <div class="d-block">
+                    <button class="btn btn-dark me-2">AED 2,549,999</button> 
+                    <p style="margin: -6.5% 0 0 83%;">
+                      <span class="bg-light text-dark" style="font-size: small;" >2025 | 0km</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</body>
+</html>
